@@ -1,5 +1,5 @@
-Symfony Standard Edition
-========================
+Symfony
+=======
 
 
 1) Installing
@@ -16,6 +16,7 @@ Symfony Standard Edition
  - [Doctrine Data Fixtures](https://github.com/doctrine/DoctrineFixturesBundle)
  - [LiipMonitorBundle](https://github.com/liip/LiipMonitorBundle) (System health checks)
  - [JMSSecurityExtraBundle](http://jmsyst.com/bundles/JMSSecurityExtraBundle) (Security enhancements)
+ - [AlexAsseticExtraBundle](https://github.com/alexandresalome/assetic-extra-bundle) (Asset directory for assets)
  - [WebProfilerExtraBundle](https://github.com/Elao/WebProfilerExtraBundle) (DEV ONLY: Adds routing, container,
  twig and assetic to web profiler)
  - [EguliasListenersDebugCommandBundle](https://github.com/egulias/ListenersDebugCommandBundle) (DEV ONLY: Adds command to debug container listeners)

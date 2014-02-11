@@ -3,8 +3,39 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "67d058473077426ef6e5cb91c6039ca2",
+    "hash": "017c8eb9d4c742b3f393ae30d9167bec",
     "packages": [
+        {
+            "name": "alexandresalome/assetic-extra-bundle",
+            "version": "v0.1.5",
+            "target-dir": "Alex/AsseticExtraBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexandresalome/assetic-extra-bundle.git",
+                "reference": "df2eece3a36f92e62e8ed572a0910e90b47750c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexandresalome/assetic-extra-bundle/zipball/df2eece3a36f92e62e8ed572a0910e90b47750c3",
+                "reference": "df2eece3a36f92e62e8ed572a0910e90b47750c3",
+                "shasum": ""
+            },
+            "require": {
+                "kriswallsmith/assetic": ">=1.1,<2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Alex\\AsseticExtraBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Extra feature for Assetic (asset directory)",
+            "time": "2014-02-04 12:47:00"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.1.2",
