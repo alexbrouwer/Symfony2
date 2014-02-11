@@ -1,0 +1,16 @@
+//
+// Theme
+// --------------------------------------------------
+
+$body-bg: black;
+$body-color: white;
+
+//
+// @something
+// ----------------------------------
+
+body {
+    background-color: $body-bg;
+    color: $body-color;
+    background-image: url('../assets/DSC_0330.jpg');
+}

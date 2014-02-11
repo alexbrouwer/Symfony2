@@ -36,6 +36,10 @@ assetic:
     bundles:        [ ]
     filters:
         cssrewrite: ~
+        compass: ~
+
+alex_assetic_extra:
+    asset_directory: true
 
 # Doctrine Configuration
 doctrine:
