@@ -1,0 +1,57 @@
+//
+// Main styles
+// --------------------------------------------------
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+$breakpoint-sm-start: 100px!default;
+$breakpoint-md-start: 200px!default;
+$breakpoint-lg-start: 300px!default;
+
+$breakpoint-xs-end: $breakpoint-sm-start - 1px;
+$breakpoint-sm-end: $breakpoint-md-start - 1px;
+$breakpoint-md-end: $breakpoint-lg-start - 1px;
+
+@mixin media-query($breakpoint) {
+    @if $breakpoint == xs-only {
+        @media only screen and (max-width:$breakpoint-xs-end) { @content; }
+    }
+    @else if $breakpoint == sm {
+        @media only screen and (min-width:$breakpoint-sm-start) { @content; }
+    }
+    @else if $breakpoint == sm-only {
+        @media only screen and (min-width:$breakpoint-sm-start) and (max-width: $breakpoint-sm-end) { @content; }
+    }
+    @else if $breakpoint == md {
+        @media only screen and (min-width:$breakpoint-md-start) { @content; }
+    }
+    @else if $breakpoint == md-only {
+        @media only screen and (min-width:$breakpoint-md-start) and (max-width: $breakpoint-md-end) { @content; }
+    }
+    @else if $breakpoint == lg or $breakpoint == lg-only {
+        @media only screen and (min-width:$breakpoint-lg-start) { @content; }
+    }
+}
+
+a {
+    color: $brand-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+//
+// Grid fixes
+// ----------------------------------
+.grid {
+    font-family:    FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+}
+
+.grid__item {
+    font-family:    $base-font-family;
+    letter-spacing: normal;
+    text-rendering: auto;
+    word-spacing:   normal;
+}

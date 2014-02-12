@@ -1,3 +1,13 @@
-{% javascripts %}
+<script>
+    appConfig = {
+        packages: [
+            {name: 'header', location: 'modules/header'},
+            {name: 'sidebar', location: 'modules/sidebar'},
+        ]
+    };
+</script>
+{% javascripts
+"bundles/gearboxclient/js/lib/curl/curl.js"
+"bundles/gearboxclient/js/run.js" %}
 <script src="{{ asset_url }}" type="text/javascript"></script>
 {% endjavascripts %}

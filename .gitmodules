@@ -1,0 +1,6 @@
+[submodule "src/Gearbox/ClientBundle/Resources/public/css/inuit"]
+	path = src/Gearbox/ClientBundle/Resources/public/css/inuit
+	url = git://github.com/csswizardry/inuit.css.git
+[submodule "src/Gearbox/ClientBundle/Resources/public/css/font-awesome"]
+	path = src/Gearbox/ClientBundle/Resources/public/css/font-awesome
+	url = git@github.com:FortAwesome/Font-Awesome.git

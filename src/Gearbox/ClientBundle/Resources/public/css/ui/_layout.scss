@@ -1,0 +1,70 @@
+//
+// Layout
+// --------------------------------------------------
+
+$layout-header-height: $base-spacing-unit * 2;
+$layout-sidebar-width: $base-spacing-unit * 10;
+
+//
+// @something
+// ----------------------------------
+#header {
+    position:         fixed;
+    top:              0;
+    left:             0;
+    right:            0;
+    height:           $layout-header-height;
+    z-index:          1000;
+
+    background-color: #000000;
+    color:            #FFFFFF;
+    font-weight:      bold;
+    line-height:      $base-line-height * 2;
+}
+
+#main {
+    margin-top: $layout-header-height;
+    height:     2000px;
+
+    @include media-query(sm) {
+        margin-left: $layout-sidebar-width;
+    }
+}
+
+#sidebar {
+    width:            $layout-sidebar-width;
+
+    background-color: $base-ui-color;
+    border-right:     1px solid black;
+
+    position:         fixed;
+    top:              $layout-header-height;
+    bottom:           0;
+
+    @include media-query(xs-only) {
+        left:    -$layout-sidebar-width;
+        @include vendor(transition, all .5s ease-in-out);
+        z-index: 1010;
+
+        &.is-showing {
+            @include vendor(transform, translate($layout-sidebar-width, 0));
+            width: 80%;
+        }
+    }
+
+    @include media-query(sm) {
+        bottom: 0;
+        left:   0;
+    }
+}
+
+.breadcrumbs {
+    background-color: $base-ui-color;
+    border-bottom:    1px solid darken($base-ui-color, 10%);
+    color:            $brand-color;
+    padding:          $half-spacing-unit / 2;
+}
+
+.content {
+    padding: $half-spacing-unit;
+}

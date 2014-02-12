@@ -1,0 +1,36 @@
+//
+// Style variables
+// --------------------------------------------------
+
+//
+// Inuit overrides
+// ----------------------------------
+
+// Base font stuff
+$base-font-size: 14px;
+$base-line-height: 20px;
+
+$base-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Responsiveness
+$responsive: false;
+$responsive-extra: false;
+
+// Font sizes
+$h1-size: 34px;
+
+// Objects and abstractions
+$use-grids: true;
+$use-arrows: true;
+$use-island: true;
+$use-breadcrumb: true;
+
+//
+// Custom
+// ----------------------------------
+
+$breakpoint-sm-start: 768px;
+$breakpoint-md-start: 992px;
+$breakpoint-lg-start: 1300px;
+
+$fa-font-path:        "../css/font-awesome/fonts";

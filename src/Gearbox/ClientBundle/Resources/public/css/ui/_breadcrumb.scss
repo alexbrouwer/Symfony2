@@ -1,0 +1,19 @@
+//
+// Breadcrumb styles
+// --------------------------------------------------
+
+//
+// @something
+// ----------------------------------
+
+.breadcrumb, .breadcrumb--path {
+    margin-bottom:  0;
+    text-transform: uppercase;
+    font-size:      $milli-size;
+
+    > li + li {
+        &:before, &[data-breadcrumb]:before {
+            color: $base-ui-color;
+        }
+    }
+}
