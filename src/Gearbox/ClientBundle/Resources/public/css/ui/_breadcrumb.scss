@@ -1,19 +1,23 @@
 //
-// Breadcrumb styles
+// Breadcrumb
 // --------------------------------------------------
 
 //
 // @something
 // ----------------------------------
+.breadcrumb li {
 
-.breadcrumb, .breadcrumb--path {
-    margin-bottom:  0;
-    text-transform: uppercase;
-    font-size:      $milli-size;
+    &, a {
+        color: $breadcrumb-color;
+        font-size: $milli-size;
+    }
 
-    > li + li {
-        &:before, &[data-breadcrumb]:before {
-            color: $base-ui-color;
-        }
+    a:hover, a:focus, &.active a {
+        color: $breadcrumb-color-active;
+        text-decoration: none;
+    }
+
+    &:before {
+        color: $breadcrumb-separator-color;
     }
 }

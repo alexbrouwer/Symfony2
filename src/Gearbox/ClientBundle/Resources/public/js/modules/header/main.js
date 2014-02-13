@@ -1,4 +1,7 @@
-define(['base/Module', './show/Controller'],function(Module, ShowController){
+define([
+    'base/Module',
+    './show/Controller'
+],function(Module, ShowController){
 
     var API = {
         showHeader: function() {

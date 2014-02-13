@@ -1,6 +1,7 @@
 //
 // Style variables
 // --------------------------------------------------
+@import "inuit/defaults";
 
 //
 // Inuit overrides
@@ -20,10 +21,13 @@ $responsive-extra: false;
 $h1-size: 34px;
 
 // Objects and abstractions
-$use-grids: true;
-$use-arrows: true;
-$use-island: true;
+$use-beautons: true;
+$use-nav: true;
+//$use-grids: true;
+//$use-arrows: true;
+//$use-island: true;
 $use-breadcrumb: true;
+$use-greybox: true;
 
 //
 // Custom
@@ -33,4 +37,140 @@ $breakpoint-sm-start: 768px;
 $breakpoint-md-start: 992px;
 $breakpoint-lg-start: 1300px;
 
-$fa-font-path:        "../css/font-awesome/fonts";
+$fa-font-path: "../css/font-awesome/fonts";
+
+$zindex-layout: 1000;
+
+$color-text-default: #333333;
+$color-text-link: #3276B1;
+$color-text-link-hover: #214E75;
+$color-text-muted: #999999;
+
+$body-bg: #EBEBEB;
+
+$input-border-color: #BDBDBD;
+$input-color: #404040;
+
+$navbar-item-color: #A8A8A8;
+$navbar-item-color-hover: #FFFFFF;
+$navbar-item-bg-active: #616161;
+$navbar-sub-item-bg: #444443;
+$navbar-sub-item-bg-hover: #4B4B4B;
+$navbar-sub-item-bg-active: $navbar-item-bg-active;
+
+$breadcrumb-color: #BBBBBB;
+$breadcrumb-color-active: #E4E4E4;
+$breadcrumb-separator-color: #E4E4E4;
+
+$layout-header-height: 50px;
+$layout-header-bg: #F3F3F3;
+$layout-header-bg-gradient: #E2E2E2;
+$layout-header-button-bg: #F8F8F8;
+$layout-header-button-border: #BFBFBF;
+$layout-header-button-color: #6D6A69;
+$layout-header-button-color-hover: $color-text-default;
+
+$layout-breadcrumbs-height: 40px;
+$layout-breadcrumbs-bg: #474544;
+
+$layout-sidebar-width: 220px;
+$layout-sidebar-hidden-width: $half-spacing-unit;
+$layout-sidebar-bg: #3A3633;
+
+// colors
+// text-muted: #999999 (& form-note)
+// text-primary: #3276B1
+// text-danger: #B94A48
+// text-success: #468847
+// text-warning: #C09853
+// text-info: #3A87AD
+
+// text-heading: #333333
+// text-heading-small: #999999
+// text-input: #404040
+// text-input-placeholder: #A2A2A2
+// text-input-note-success: #6FB679
+// text-alert-success: #296829
+// text-alert-danger: #FFFFFF
+// text-alert-warning: #6B6D31
+// text-alert-info: #346597
+
+// text-button-default: #333333
+// text-button-default-hover: #333333
+// text-button-primary: #FFFFFF
+// text-button-primary-hover: #FFFFFF
+// text-button-info: #FFFFFF
+// text-button-info-hover: #FFFFFF
+// text-button-success: #FFFFFF
+// text-button-success-hover: #FFFFFF
+// text-button-warning: #FFFFFF
+// text-button-warning-hover: #FFFFFF
+// text-button-danger: #FFFFFF
+// text-button-danger-hover: #FFFFFF
+
+// bg-main: #EBEBEB
+
+// bg-header: #F3F3F3 (lin grad to #E2E2E2)
+// bg-header-button: #F8F8F8
+
+// bg-input: #FFFFFF
+// bg-block: #FFFFFF
+// bg-block-footer: #F9F9F9
+// bg-block-header: #FAFAFA
+// bg-input-error: #A90329
+// bg-input-success: #7DC27D
+// bg-table-header: #EEEEEE
+// bg-table-stripe: #F9F9F9
+// bg-table-hover: #ECF3F8
+// bg-table-success: #DFF0D8
+// bg-table-danger: #F2DEDE
+// bg-table-warning: #FCF8E3
+// bg-table-info: N.A.
+// bg-alert-success: #CEE0CF
+// bg-alert-danger: #C46A69
+// bg-alert-warning: #ECDFB0
+// bg-alert-info: #D6DDE7
+// bg-button-default: #FFFFFF
+// bg-button-default-hover: #EBEBEB
+// bg-button-primary: #3276B1
+// bg-button-primary-hover: #296191
+// bg-button-info: #57889C
+// bg-button-info-hover: #487182
+// bg-button-success: #739E73
+// bg-button-success-hover: #5F895F
+// bg-button-warning: #C79121
+// bg-button-warning-hover: #A4781B
+// bg-button-danger: #A90329
+// bg-button-danger-hover: #81021F
+
+// border-input: #BDBDBD
+// border-input-focus: #3276B1
+// border-input-error: #FFF0F0
+// border-input-success: #F0FFF0
+// border-header-input: #BFBFBF
+// border-header-button: #BFBFBF
+// border-block: #DDDDDD
+// border-hr: #EEEEEE
+// border-fieldset: #E5E5E5
+// border-block-header: #C2C2C2
+// border-block: #CCCCCC
+// border-table: #DDDDDD
+// border-alert-success: #8EB589
+// border-alert-danger: #963B49
+// border-alert-warning: #E5C693
+// border-alert-info: #9CB4C5
+// border-button-default: #CCCCCC
+// border-button-default-hover: #ADADAD
+// border-button-primary: #2C699D
+// border-button-primary-hover: #1F496D
+// border-button-info: #4E7A8C
+// border-button-info-hover: #385764
+// border-button-success: #659265
+// border-button-success-hover: #4C6E4C
+// border-button-warning: #B1811D
+// border-button-warning-hover: #7D5B15
+// border-button-danger: #900323
+// border-button-danger-hover: #540114
+
+$header-bg: #F3F3F3;
+$header-bg-shade: #E2E2E2;

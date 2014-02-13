@@ -1,0 +1,35 @@
+//
+// Forms
+// --------------------------------------------------
+
+//
+// @something
+// ----------------------------------
+.text-input {
+    height: 30px;
+
+    border: 1px solid $input-border-color;
+    @include border-radius(0);
+
+    padding: 0 $half-spacing-unit;
+    margin-top: $half-spacing-unit;
+
+    color: $input-color;
+
+    outline: 0 none;
+    vertical-align: middle;
+}
+
+.input-group {
+    border-collapse: separate;
+    display: inline-table;
+    position: relative;
+
+    .text-input, .btn {
+        display: table-cell;
+
+        &:not(:first-child) {
+            border-left-width: 0;
+        }
+    }
+}

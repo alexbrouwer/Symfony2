@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0"/>
+
+    <title>Theme tester!</title>
+
+    {% include "GearboxClientBundle::_stylesheets.html.twig" %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<div id="header">
+    <div class="float--left">
+        <h1><i class="fa fa-leaf"></i> Gearbox</h1>
+    </div>
+    <div class="float--right">
+        <div class="input-group">
+            <input type="text" class="text-input " placeholder="Search">
+            <button type="submit" class="btn btn--small">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <a href="#" class="btn btn--small">
+            <i class="fa fa-sign-out"></i>
+        </a>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="navbar">
+    <ul class="nav">
+        <li>
+            <a href="#">Profile</a>
+        </li>
+    </ul>
+    <ul class="nav">
+        <li>
+            <a href="#">
+                <i class="fa fa-folder-open nav__icon"></i>Item 1
+            </a>
+        </li>
+        <li class="is-open is-active">
+            <a href="#">
+                <i class="fa fa-folder-open nav__icon"></i>
+                Item 2
+                <i class="fa fa-angle-down nav__caret"></i>
+            </a>
+            <ul class="nav">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-folder-open nav__icon"></i>
+                        Item 2.1
+                        <i class="fa fa-angle-down nav__caret"></i>
+                    </a>
+                    <ul class="nav">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-folder-open nav__icon"></i>
+                                Item 2.1.1
+                                <i class="fa fa-angle-down nav__caret"></i>
+                            </a>
+                            <ul class="nav">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-folder-open nav__icon"></i>Item 2.1.1.1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-folder-open nav__icon"></i>Item 2.1.1.2
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-folder-open nav__icon"></i>Item 2.1.2
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="is-active">
+                    <a href="#">
+                        <i class="fa fa-folder-open nav__icon"></i>Item 2.2
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+</div>
+<div id="breadcrumbs">
+    <ul class="nav breadcrumb breadcrumb--path">
+        <li><a href="#">You</a></li>
+        <li><a href="#">Are</a></li>
+        <li class="active"><a href="#">Here</a></li>
+    </ul>
+</div>
+<div id="main">
+    Main
+</div>
+</body>
+</html>

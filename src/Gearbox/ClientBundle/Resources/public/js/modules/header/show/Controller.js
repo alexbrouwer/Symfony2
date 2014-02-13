@@ -1,19 +1,15 @@
-define(['base/kernel','./views/Header', 'base/entity/Collection'], function(kernel, HeaderView, Collection) {
+define([
+    'base/kernel',
+    './views/Header',
+    'entities/nav/ItemRepository'
+], function(kernel, HeaderView, itemRepository) {
 
     return {
         showHeader: function() {
-            var links = this.getLinksCollection();
+            var links = itemRepository.all();
 
             var view = this.getSidebarView(links);
             kernel.headerRegion.show(view);
-        },
-
-        getLinksCollection: function() {
-            return new Collection([
-                { name: 'first', link:'#first' },
-                { name: 'second', link:'#second' },
-                { name: 'third', link:'#third' }
-            ]);
         },
 
         getSidebarView: function(links) {

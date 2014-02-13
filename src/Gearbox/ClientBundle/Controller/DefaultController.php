@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('GearboxClientBundle:Default:index.html.twig');
     }
+
+    public function themeAction()
+    {
+        return $this->render('GearboxClientBundle:Default:theme-test.html.twig');
+    }
 }

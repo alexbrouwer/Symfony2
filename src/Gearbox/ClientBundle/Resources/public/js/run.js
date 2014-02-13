@@ -34,7 +34,9 @@
             modules: 'modules'
         },
         preloads: ['underscore', 'jquery'],
-        packages: []
+        packages: [
+            {name: 'app', location: 'app'}
+        ]
     }, idx, packages = appConfig.packages, packageList = [], packageName;
 
     function forEachPackage(callback) {

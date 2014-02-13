@@ -1,3 +1,7 @@
 gearbox_client_homepage:
     pattern:  /
     defaults: { _controller: GearboxClientBundle:Default:index }
+
+gearbox_client_theme:
+    pattern:  /theme
+    defaults: { _controller: GearboxClientBundle:Default:theme }

@@ -1,30 +1,48 @@
-(function(global){
-    define(['./Application', 'backbone'], function(Application, Backbone){
+define(['./Application'], function(Application) {
 
-        var app = global.App = new Application();
+    var kernel = new Application();
+    kernel.defaultRegion = null;
 
-        app.addRegions({
-            headerRegion: '#header',
-            sidebarRegion: '#sidebar',
-            mainRegion: '#main'
+    // Setup regions
+    kernel.on('initialize:before', function() {
+        if(_.isEmpty(kernel._regionManager._regions)) {
+            throw new Error('No application regions specified');
+        }
+        if(!kernel.defaultRegion || _.isEmpty(kernel.defaultRegion)) {
+            throw new Error('No default application region specified');
+        }
+
+        // Add handler for requesting default region
+        kernel.reqres.setHandler('region', function() {
+            return App.defaultRegion;
         });
-
-        app.on('initialize:after', function(){
-            if(Backbone.history) {
-                Backbone.history.start();
-            }
-            console.log('app initialize');
-        });
-
-        app.on('initialize:before', function(){
-            console.log('app initializing');
-        });
-
-        app.on('start', function(){
-            console.log('app started');
-        });
-
-        return app;
-
     });
-})(window);
+
+    // Cleanup options and store all in config
+    kernel.on('initialize:after', function(options) {
+        delete options.history;
+        delete options.packages;
+        kernel.setConfig(options);
+    });
+
+    // Start history management
+    kernel.on('initialize:after', function() {
+        if(kernel.history) {
+            kernel.history.start(kernel.getConfig().get('history'));
+        }
+    });
+
+    // Debugging
+    kernel.on('initialize:before', function(options) {
+        console.log('app initializing', kernel, options);
+    });
+    kernel.on('initialize:after', function(options) {
+        console.log('app initialized', kernel, options);
+    });
+    kernel.on('start', function(options) {
+        console.log('app started', kernel, options);
+    });
+
+    return kernel;
+
+});

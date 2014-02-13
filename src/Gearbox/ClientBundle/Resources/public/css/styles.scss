@@ -3,11 +3,14 @@
 // Styles
 // --------------------------------------------------
 
+@import "compass";
+
 //
 // Setup
 // ----------------------------------
 @import "vars";
 @import "inuit/inuit";
+@import "mixins";
 
 //
 // Custom extensions
@@ -15,7 +18,10 @@
 @import "font-awesome/scss/font-awesome";
 
 @import "ui/main";
-@import "ui/layout";
-@import "ui/banner";
+@import "ui/type";
+@import "ui/forms";
+@import "ui/buttons";
 @import "ui/breadcrumb";
-@import "ui/content";
+
+@import "ui/layout";
+@import "ui/navbar";

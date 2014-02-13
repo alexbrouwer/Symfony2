@@ -1,0 +1,13 @@
+//
+// Buttons
+// --------------------------------------------------
+
+//
+// @something
+// ----------------------------------
+.btn {
+    @include border-radius(0);
+    border-width: 1px;
+    border-style: solid;
+    border-color: $color-text-default;
+}
