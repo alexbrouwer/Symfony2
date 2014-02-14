@@ -1,21 +1,16 @@
 define([
-    'base/kernel',
-    './views/Header',
-    'entities/nav/ItemRepository'
-], function(kernel, HeaderView, itemRepository) {
+    'base/view/Controller',
+    './views/Header'
+], function(ViewController, HeaderView) {
 
-    return {
+    return ViewController.extend({
         showHeader: function() {
-            var links = itemRepository.all();
-
-            var view = this.getSidebarView(links);
-            kernel.headerRegion.show(view);
+            var view = this.getHeaderView();
+            this.show(view);
         },
 
-        getSidebarView: function(links) {
-            return new HeaderView({
-                collection: links
-            });
+        getHeaderView: function() {
+            return new HeaderView();
         }
-    };
+    });
 });

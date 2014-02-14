@@ -1,6 +1,5 @@
-define(['base/view/Layout', 'text!./Header.html', './Link'], function(BaseView, template, ItemView){
+define(['base/view/Item', 'text!./Header.html'], function(BaseView, template){
     return BaseView.extend({
-        template: template,
-        className: 'navbar'
+        template: template
     })
 });

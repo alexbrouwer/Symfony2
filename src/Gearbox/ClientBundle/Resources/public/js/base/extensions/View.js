@@ -5,7 +5,7 @@ define(['marionette', './Handlebars'], function(Marionette, Handlebars) {
             return false;
         }
 
-        if(template.match('{.*}')) {
+        if(template.match('{{.*}}')) {
             template = Handlebars.compile(template);
         }
 

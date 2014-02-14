@@ -1,6 +1,10 @@
 define({
     history: {
-        pushState: true,
+        pushState: false,
         root: '/'
-    }
+    },
+
+    debug: false,
+
+    defaultRoute: '/users'
 });

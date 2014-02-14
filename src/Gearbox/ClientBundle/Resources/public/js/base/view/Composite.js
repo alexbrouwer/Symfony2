@@ -1,3 +1,5 @@
 define(['marionette','base/extensions/View'], function(Marionette) {
-    return Marionette.CompositeView;
+    return Marionette.CompositeView.extend({
+        itemViewEventPrefix: 'childview'
+    });
 });

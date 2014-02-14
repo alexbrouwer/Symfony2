@@ -1,0 +1,10 @@
+<a data-toggle="collapse" href="{{#if children }}javascript:void(0);{{else}}#{{href}}{{/if}}">
+    {{#if icon }}
+    <i class="{{icon}} nav__icon"></i>
+    {{/if}}
+    {{title}}
+    {{#if children }}
+    <i class="fa fa-angle-down nav__caret"></i>
+    {{/if}}
+</a>
+<ul class="nav"></ul>

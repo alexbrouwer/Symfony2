@@ -1,7 +1,16 @@
-define(['./Application'], function(Application) {
+define(['./Application', 'underscore'], function(Application, _) {
 
     var kernel = new Application();
     kernel.defaultRegion = null;
+    kernel.defaultRoute = '';
+
+    var config = kernel.getConfig();
+    kernel.listenTo(config, 'change:defaultRegion', function(model, value) {
+        kernel.defaultRegion = value;
+    });
+    kernel.listenTo(config, 'change:defaultRoute', function(model, value) {
+        kernel.defaultRoute = value;
+    });
 
     // Setup regions
     kernel.on('initialize:before', function() {
@@ -14,33 +23,36 @@ define(['./Application'], function(Application) {
 
         // Add handler for requesting default region
         kernel.reqres.setHandler('region', function() {
-            return App.defaultRegion;
+            if(_.isString(kernel.defaultRegion)) {
+                kernel.defaultRegion = kernel[kernel.defaultRegion];
+            }
+            return kernel.defaultRegion;
         });
-    });
-
-    // Cleanup options and store all in config
-    kernel.on('initialize:after', function(options) {
-        delete options.history;
-        delete options.packages;
-        kernel.setConfig(options);
     });
 
     // Start history management
     kernel.on('initialize:after', function() {
-        if(kernel.history) {
-            kernel.history.start(kernel.getConfig().get('history'));
+        kernel.startHistory();
+        if(!kernel.getCurrentRoute()) {
+            kernel.navigate(kernel.defaultRoute, {trigger: true});
+        }
+    });
+
+    kernel.commands.setHandler('debug', function() {
+        if(kernel.getConfig().get('debug')) {
+            console.log.apply(null, arguments);
         }
     });
 
     // Debugging
-    kernel.on('initialize:before', function(options) {
-        console.log('app initializing', kernel, options);
+    kernel.on('initialize:before', function(config) {
+        kernel.execute('debug', 'app initializing', kernel, config);
     });
-    kernel.on('initialize:after', function(options) {
-        console.log('app initialized', kernel, options);
+    kernel.on('initialize:after', function(config) {
+        kernel.execute('debug', 'app initialized', kernel, config);
     });
-    kernel.on('start', function(options) {
-        console.log('app started', kernel, options);
+    kernel.on('start', function(config) {
+        kernel.execute('debug', 'app started', kernel, config);
     });
 
     return kernel;

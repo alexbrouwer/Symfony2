@@ -2,23 +2,13 @@
 
     var curl = global.curl;
     var appConfig = global.appConfig;
-//    delete global.appConfig;
-
     var config = {
         baseUrl: 'bundles/gearboxclient/js',
         paths: {
             curl: 'lib/curl/curl',
             underscore: 'lib/lodash',
             jquery: 'lib/jquery/jquery',
-            backbone: {
-                location: 'lib/backbone/backbone',
-                config: {
-                    loader: 'curl/loader/legacy',
-                    exports: 'Backbone.noConflict()',
-                    requires: ['jquery', 'underscore']
-                }
-            },
-
+            backbone: 'lib/backbone-shim',
             marionette: 'lib/backbone/backbone.marionette',
             'backbone.wreqr': 'lib/backbone/backbone.wreqr',
             'backbone.babysitter': 'lib/backbone/backbone.babysitter',
@@ -29,6 +19,7 @@
                     exports: 'Handlebars'
                 }
             },
+            when: 'lib/when',
             base: 'base',
             entities: 'entities',
             modules: 'modules'
@@ -59,8 +50,10 @@
     curl(config, ['app']).then(success, fail);
 
     function success(app) {
+        app.setConfig(appConfig);
+        app.execute('debug', 'loading packages', packageList);
         curl(packageList).then(function() {
-            app.start(appConfig);
+            app.start(app.getConfig());
         }, fail);
     }
 

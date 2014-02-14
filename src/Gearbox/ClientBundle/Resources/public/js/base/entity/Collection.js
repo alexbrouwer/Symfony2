@@ -1,4 +1,4 @@
-define(['backbone'], function(Backbone){
+define(['backbone', 'base/extensions/entities'], function(Backbone){
     return Backbone.Collection.extend({
 
     });

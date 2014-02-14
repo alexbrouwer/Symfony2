@@ -3,13 +3,16 @@ define([
     './show/Controller'
 ],function(Module, ShowController){
 
+    var mod = Module('HeaderModule', {autoStart: false});
+
     var API = {
         showHeader: function() {
-            ShowController.showHeader();
+            var controller = new ShowController({
+                region: mod.kernel.headerRegion
+            });
+            controller.showHeader();
         }
     };
-
-    var mod = new Module('HeaderModule');
 
     mod.on('start', function(){
         API.showHeader();

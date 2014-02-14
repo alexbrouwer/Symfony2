@@ -1,14 +1,17 @@
-define(['base/Module', './show/Controller'],function(Module, ShowController){
+define(['base/Module', './list/Controller'],function(Module, ListController){
+
+    var mod = Module('SidebarModule', {autoStart: false});
 
     var API = {
-        showSidebar: function() {
-            ShowController.showSidebar();
+        show: function() {
+            var controller = new ListController({
+                region: mod.kernel.sidebarRegion
+            });
+            controller.showSidebar();
         }
     };
 
-    var mod = new Module('HeaderModule');
-
     mod.on('start', function(){
-        API.showSidebar();
+        API.show();
     });
 });

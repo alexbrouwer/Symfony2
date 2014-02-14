@@ -1,0 +1,7 @@
+parameters:
+#    gearbox_api.example.class: Gearbox\ApiBundle\Example
+
+services:
+#    gearbox_api.example:
+#        class: %gearbox_api.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
