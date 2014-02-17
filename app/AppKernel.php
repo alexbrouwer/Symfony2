@@ -23,6 +23,10 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Alex\AsseticExtraBundle\AlexAsseticExtraBundle(),
             new Gearbox\ClientBundle\GearboxClientBundle(),
+
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Gearbox\ApiBundle\GearboxApiBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

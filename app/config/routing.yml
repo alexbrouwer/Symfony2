@@ -1,3 +1,8 @@
+gearbox_api:
+    resource: "@GearboxApiBundle/Resources/config/routing.yml"
+    prefix:   /api/
+    type: rest
+
 gearbox_client:
     resource: "@GearboxClientBundle/Resources/config/routing.yml"
     prefix:   /

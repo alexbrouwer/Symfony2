@@ -1,0 +1,23 @@
+//
+// Breadcrumb
+// --------------------------------------------------
+
+//
+// @something
+// ----------------------------------
+.breadcrumb li {
+
+    &, a {
+        color: $breadcrumb-color;
+        font-size: $milli-size;
+    }
+
+    a:hover, a:focus, &.active a {
+        color: $breadcrumb-color-active;
+        text-decoration: none;
+    }
+
+    &:before {
+        color: $breadcrumb-separator-color;
+    }
+}

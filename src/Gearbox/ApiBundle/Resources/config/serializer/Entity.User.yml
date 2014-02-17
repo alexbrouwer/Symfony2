@@ -1,0 +1,20 @@
+Gearbox\ApiBundle\Entity\User:
+    exclusion_policy: ALL
+    access_type: public_method
+
+    virtual_properties:
+        getFullName: {}
+
+    properties:
+        id:
+            expose: true
+            read_only: true
+
+        firstName:
+            expose: true
+
+        lastName:
+            expose: true
+
+        email:
+            expose: true

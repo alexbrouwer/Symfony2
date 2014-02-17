@@ -1,0 +1,23 @@
+//
+// Main styles
+// --------------------------------------------------
+
+body {
+    background-color: $body-bg;
+}
+
+//
+// Grid fixes
+// ----------------------------------
+.grid {
+    font-family:    FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+}
+
+.grid__item {
+    font-family:    $base-font-family;
+    letter-spacing: normal;
+    text-rendering: auto;
+    word-spacing:   normal;
+}

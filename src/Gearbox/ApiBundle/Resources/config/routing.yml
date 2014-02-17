@@ -1,0 +1,3 @@
+users:
+    type:     rest
+    resource: Gearbox\ApiBundle\Controller\UsersController

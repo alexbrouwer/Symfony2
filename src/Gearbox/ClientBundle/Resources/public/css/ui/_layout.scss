@@ -1,0 +1,105 @@
+//
+// Layout
+// --------------------------------------------------
+
+//
+// @something
+// ----------------------------------
+#header {
+    position: fixed;
+    top:      0;
+    left:     0;
+    right:    0;
+
+    z-index:  $zindex-layout;
+
+    height:   $layout-header-height;
+
+    padding: $half-spacing-unit;
+
+    background-color: $layout-header-bg;
+    @include background-image(linear-gradient($layout-header-bg, $layout-header-bg-gradient));
+
+    .btn {
+        color: $layout-header-button-color;
+        background-color: $layout-header-button-bg;
+        border-color: $layout-header-button-border;
+
+        &:hover, &:active, &:focus {
+            color: $layout-header-button-color-hover;
+        }
+    }
+
+    .text-input {
+        margin-top: 0;
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 26px;
+        line-height: 1;
+        margin-bottom: 0;
+    }
+}
+
+#breadcrumbs {
+    position: fixed;
+    top:      $layout-header-height;
+    left:     $layout-sidebar-width;
+    right:    0;
+
+    z-index:  $zindex-layout - 1;
+
+    height:   $layout-breadcrumbs-height;
+
+    @include vendor(transition, all .15s ease-in-out);
+
+    .hidden-sidebar & {
+        left: $layout-sidebar-hidden-width;
+    }
+
+    background: $layout-breadcrumbs-bg;
+    padding: $half-spacing-unit;
+
+    .breadcrumb {
+        margin-bottom: 0;
+    }
+}
+
+#sidebar {
+    position: fixed;
+    top:      $layout-header-height;
+    bottom:   0;
+    left:     0;
+
+    z-index:  $zindex-layout;
+
+    width:    $layout-sidebar-width;
+
+    @include vendor(transition, all .15s ease-in-out);
+
+    .hidden-sidebar & {
+        left: -($layout-sidebar-width - $layout-sidebar-hidden-width);
+
+        &:hover {
+            @include vendor(transform, translate($layout-sidebar-width - $layout-sidebar-hidden-width, 0));
+        }
+    }
+
+    background: linear-gradient(to right, $layout-sidebar-bg 93%, darken($layout-sidebar-bg, 5%) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+#main {
+    margin-top: ($layout-header-height + $layout-breadcrumbs-height);
+    margin-left: $layout-sidebar-width;
+
+    @include vendor(transition, all .15s ease-in-out);
+
+    .hidden-sidebar & {
+        margin-left: $layout-sidebar-hidden-width;
+    }
+
+    // Debugging
+    height: 2000px;
+    background-color: #EBEBEB;
+}
